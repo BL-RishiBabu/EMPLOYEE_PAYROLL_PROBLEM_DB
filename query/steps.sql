@@ -38,3 +38,15 @@ ALTER TABLE employee_payroll ADD gender CHAR(1) AFTER name;
 UPDATE employee_payroll SET gender = 'M' WHERE name = 'Bill' OR name = 'Charlie';
 
 UPDATE employee_payroll SET gender = 'F' WHERE name = 'Terisa';
+
+-- Step 7: Use aggregate functions grouped by gender to analyze payroll metrics
+
+SELECT gender, SUM(salary) FROM employee_payroll GROUP BY gender;
+
+SELECT gender, AVG(salary) FROM employee_payroll GROUP BY gender;
+
+SELECT gender, MIN(salary) FROM employee_payroll GROUP BY gender;
+
+SELECT gender, MAX(salary) FROM employee_payroll GROUP BY gender;
+
+SELECT gender, COUNT(*) AS count FROM employee_payroll GROUP BY gender;
