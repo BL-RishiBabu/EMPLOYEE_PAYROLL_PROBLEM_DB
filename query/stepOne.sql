@@ -1,1 +1,1 @@
-create database payroll_services;
+create database payroll_service;
