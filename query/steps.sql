@@ -24,3 +24,9 @@ INSERT INTO employee_payroll (name, salary, start) VALUES
 -- Step 4: Retrieve all employee payroll data from the table (CRUD - Read Operation)
 
 SELECT * FROM employee_payroll;
+
+-- Step 5: Retrieve specific salary data and filter records by date range using WHERE clause
+
+SELECT salary FROM employee_payroll WHERE name = 'Bill';
+
+SELECT * FROM employee_payroll WHERE start BETWEEN CAST('2018-01-01' AS DATE) AND DATE(NOW());
